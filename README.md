@@ -2,6 +2,12 @@
 
 Client-side tour search application: destination picker, search via the provided API, and results displayed as price-sorted cards.
 
+## Live Demo
+
+The application is deployed on Firebase Hosting and can be accessed here:
+
+https://tour-search-21731.web.app
+
 ## Requirements
 
 - Node.js 20.17.0
