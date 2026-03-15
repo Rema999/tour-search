@@ -36,9 +36,10 @@ export const TourCard: FC<TourCardProps> = ({ card }) => (
       )}
       <p className={styles.price}>{card.price.toLocaleString()} грн</p>
       {card.nights > 0 && <p className={styles.nights}>{card.nights} ночей</p>}
-      <a href="#" className={styles.link}>
+      {/* TODO: wire to price detail when URL/action is available */}
+      <button type="button" className={styles.link}>
         Відкрити ціну
-      </a>
+      </button>
     </div>
   </article>
 );

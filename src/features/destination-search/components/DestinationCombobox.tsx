@@ -10,6 +10,7 @@ export type DestinationComboboxProps = {
   onInputValueChange: (value: string) => void;
   onSelect: (option: DestinationOption | null) => void;
   placeholder?: string;
+  id?: string;
 };
 
 export function DestinationCombobox({
@@ -18,6 +19,7 @@ export function DestinationCombobox({
   onInputValueChange,
   onSelect,
   placeholder = "Destination",
+  id,
 }: DestinationComboboxProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { options } = useDestinationOptions(inputValue, value);
@@ -34,6 +36,7 @@ export function DestinationCombobox({
       getOptionKey={o => o.id}
       renderOption={o => <DestinationOptionView option={o} />}
       placeholder={placeholder}
+      id={id}
     />
   );
 }

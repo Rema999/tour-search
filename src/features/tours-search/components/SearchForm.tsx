@@ -1,4 +1,4 @@
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useId } from "react";
 import { DestinationCombobox } from "@/features/destination-search";
 import type { DestinationOption } from "@/features/destination-search";
 import { Button } from "@/shared/ui";
@@ -23,6 +23,7 @@ export const SearchForm: FC<SearchFormProps> = ({
   isSubmitting,
   placeholder = "Destination",
 }) => {
+  const destinationInputId = useId();
   const canSubmit = !!selectedDestination;
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -32,8 +33,11 @@ export const SearchForm: FC<SearchFormProps> = ({
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.field}>
-        <label className={styles.label}>Destination</label>
+        <label className={styles.label} htmlFor={destinationInputId}>
+          Destination
+        </label>
         <DestinationCombobox
+          id={destinationInputId}
           value={selectedDestination}
           inputValue={inputValue}
           onInputValueChange={onInputValueChange}

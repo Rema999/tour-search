@@ -24,6 +24,7 @@ export type ComboboxProps<T> = {
   renderOption: (option: T) => ReactNode;
   placeholder?: string;
   disabled?: boolean;
+  id?: string;
 };
 
 function ComboboxInner<T>({
@@ -37,6 +38,7 @@ function ComboboxInner<T>({
   renderOption,
   placeholder = "",
   disabled = false,
+  id,
 }: ComboboxProps<T>) {
   const rootRef = useRef<HTMLDivElement>(null);
   const anchorRef = useRef<HTMLInputElement>(null);
@@ -106,6 +108,7 @@ function ComboboxInner<T>({
       <div className={styles.inputWrap}>
         <Input
           ref={anchorRef}
+          id={id}
           value={inputValue}
           onChange={e => onInputValueChange(e.target.value)}
           onFocus={open}
