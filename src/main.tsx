@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 
 import { AppProviders } from "@/app/providers";
 import App from "./App";
+import "@/shared/ui/theme.css";
 import "./index.css";
 
 const root = ReactDOM.createRoot(

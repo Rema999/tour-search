@@ -3,9 +3,9 @@
   flex-direction: column;
   height: 100%;
   min-width: 0;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px var(--color-shadow);
   overflow: hidden;
 }
 
@@ -13,7 +13,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: #f0f0f0;
+  background: var(--color-bg-muted);
 }
 
 .body {
@@ -29,20 +29,20 @@
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.3;
-  color: #000;
+  color: var(--color-black);
 }
 
 .location {
   margin: 0;
   font-size: 0.9rem;
-  color: #000;
+  color: var(--color-black);
   line-height: 1.4;
 }
 
 .date {
   margin: 0;
   font-size: 0.9rem;
-  color: #000;
+  color: var(--color-black);
   line-height: 1.4;
 }
 
@@ -50,25 +50,25 @@
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #000;
+  color: var(--color-black);
   line-height: 1.4;
 }
 
 .nights {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-text-muted);
   line-height: 1.4;
 }
 
 .link {
   margin-top: 4px;
   font-size: 0.8rem;
-  color: #007bff;
+  color: var(--color-link);
   text-decoration: none;
   cursor: pointer;
 }
 
 .link:hover {
-  color: #0056b3;
+  color: var(--color-link-hover);
 }

@@ -7,27 +7,27 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
-  color: #fff;
-  background: #0066cc;
+  color: var(--color-white);
+  background: var(--color-primary);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .button:hover:not(:disabled) {
-  background: #0052a3;
+  background: var(--color-primary-hover);
 }
 
 .button:active:not(:disabled) {
-  background: #003d7a;
+  background: var(--color-primary-active);
 }
 
 .button:disabled {
-  background: #c5c5c5;
+  background: var(--color-disabled-bg);
   cursor: not-allowed;
 }
 
 .spinner {
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-disabled-text);
 }

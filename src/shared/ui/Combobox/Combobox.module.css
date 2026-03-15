@@ -10,7 +10,7 @@
 
 .inputWrap input {
   border-radius: 8px;
-  border-color: #d1d5db;
+  border-color: var(--color-combobox-border);
 }
 
 .inputWithClear {
@@ -27,7 +27,7 @@
   padding: 0;
   font-size: 18px;
   line-height: 1;
-  color: #666;
+  color: var(--color-text-muted);
   background: none;
   border: none;
   border-radius: 4px;
@@ -35,8 +35,8 @@
 }
 
 .clearBtn:hover {
-  color: #333;
-  background: #eee;
+  color: var(--color-text);
+  background: var(--color-bg-hover);
 }
 
 .listWrap {
@@ -51,7 +51,7 @@
   max-height: 240px;
   overflow-y: auto;
   border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-combobox-list-border);
 }
 
 .item,
@@ -63,14 +63,14 @@
 
 .item:hover,
 .item.highlighted {
-  background: #f0f4f8;
+  background: var(--color-combobox-item-hover);
 }
 
 .itemEmpty {
-  color: #666;
+  color: var(--color-text-muted);
   cursor: default;
 }
 
 .item.highlighted {
-  background: #e8eef4;
+  background: var(--color-combobox-item-highlight);
 }
