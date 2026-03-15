@@ -41,6 +41,12 @@ build/Release
 node_modules/
 jspm_packages/
 
+# IDE
+.idea/
+
+# Vite build output
+build/
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
