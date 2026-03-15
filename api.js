@@ -215,7 +215,6 @@ const db = new DB();
 
 export const getCountries = () => {
   const countries = db.getCountries();
-    console.log('countries',countries)
   const response = new Response(JSON.stringify(countries), {
     status: 200,
     headers: {
