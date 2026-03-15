@@ -1,0 +1,22 @@
+.empty {
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+}
+
+.description {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.action {
+  margin-top: 16px;
+}

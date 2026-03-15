@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+  background: #0066cc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+  background: #0052a3;
+}
+
+.button:active:not(:disabled) {
+  background: #003d7a;
+}
+
+.button:disabled {
+  background: #c5c5c5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.9);
+}

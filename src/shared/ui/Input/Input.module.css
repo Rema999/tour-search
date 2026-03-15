@@ -1,0 +1,60 @@
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:hover:not(:disabled):not(:focus) {
+  border-color: #a0a0a0;
+}
+
+.input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:disabled {
+  background: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.input.error {
+  border-color: #c62828;
+}
+
+.input.error:focus {
+  box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.2);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+}
+
+.error {
+  font-size: 12px;
+  color: #c62828;
+}
+
+.hint {
+  font-size: 12px;
+  color: #666;
+}

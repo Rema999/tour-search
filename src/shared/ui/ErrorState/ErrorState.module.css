@@ -1,0 +1,22 @@
+.error {
+  padding: 24px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #c62828;
+}
+
+.message {
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.action {
+  margin-top: 12px;
+}
