@@ -50,20 +50,10 @@ export type SearchToursError =
   | SearchExhaustedError
   | SearchCancelledError;
 
-export function isSearchCancelledError(
-  e: unknown
-): e is SearchCancelledError {
-  return typeof e === "object" && e !== null && (e as SearchCancelledError).code === SEARCH_CANCELLED_CODE;
-}
-
-export function isSearchNotReadyError(
-  e: SearchToursError
-): e is SearchNotReadyError {
-  return e.code === SEARCH_NOT_READY_CODE;
-}
-
-export function isSearchNotFoundError(
-  e: SearchToursError
-): e is SearchNotFoundError {
-  return e.code === SEARCH_NOT_FOUND_CODE;
+export function isSearchCancelledError(e: unknown): e is SearchCancelledError {
+  return (
+    typeof e === "object" &&
+    e !== null &&
+    (e as SearchCancelledError).code === SEARCH_CANCELLED_CODE
+  );
 }

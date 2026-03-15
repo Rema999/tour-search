@@ -4,13 +4,13 @@ import type { DestinationOption } from "./types";
 import { mapCountriesToOptions, mapGeoToOptions } from "./mappers";
 
 export async function loadCountries(): Promise<DestinationOption[]> {
-  const raw = await getCountries() as unknown as CountriesResponse;
+  const raw = (await getCountries()) as CountriesResponse;
   return mapCountriesToOptions(raw);
 }
 
 export async function searchGeoDestinations(
   query: string
 ): Promise<DestinationOption[]> {
-  const raw = await searchGeo(query) as unknown as GeoSearchResponse;
+  const raw = (await searchGeo(query)) as GeoSearchResponse;
   return mapGeoToOptions(raw);
 }

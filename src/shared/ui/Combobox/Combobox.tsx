@@ -27,7 +27,6 @@ export type ComboboxProps<T> = {
 };
 
 function ComboboxInner<T>({
-  value,
   inputValue,
   options,
   isOpen,
@@ -108,10 +107,12 @@ function ComboboxInner<T>({
         <Input
           ref={anchorRef}
           value={inputValue}
-          onChange={(e) => onInputValueChange(e.target.value)}
+          onChange={e => onInputValueChange(e.target.value)}
           onFocus={open}
           onClick={open}
-          onKeyDown={handleKeyDown as (e: KeyboardEvent<HTMLInputElement>) => void}
+          onKeyDown={
+            handleKeyDown as (e: KeyboardEvent<HTMLInputElement>) => void
+          }
           placeholder={placeholder}
           disabled={disabled}
           autoComplete="off"
@@ -154,6 +155,8 @@ function ComboboxInner<T>({
   );
 }
 
-const Combobox = ComboboxInner as <T>(props: ComboboxProps<T>) => React.JSX.Element;
+const Combobox = ComboboxInner as <T>(
+  props: ComboboxProps<T>
+) => React.JSX.Element;
 
 export default Combobox;

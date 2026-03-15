@@ -31,8 +31,8 @@ export function DestinationCombobox({
       onOpenChange={setIsOpen}
       onInputValueChange={onInputValueChange}
       onSelect={onSelect}
-      getOptionKey={(o) => o.id}
-      renderOption={(o) => <DestinationOptionView option={o} />}
+      getOptionKey={o => o.id}
+      renderOption={o => <DestinationOptionView option={o} />}
       placeholder={placeholder}
     />
   );

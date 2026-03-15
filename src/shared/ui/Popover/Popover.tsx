@@ -19,7 +19,10 @@ export type PopoverProps = {
 
 const Popover: FC<PopoverProps> = ({ anchorRef, open, onClose, children }) => {
   const contentRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState<{ top: number; left: number } | null>(null);
+  const [position, setPosition] = useState<{
+    top: number;
+    left: number;
+  } | null>(null);
 
   const close = useCallback(() => {
     onClose?.();
@@ -49,7 +52,8 @@ const Popover: FC<PopoverProps> = ({ anchorRef, open, onClose, children }) => {
     const handleClick = (e: MouseEvent) => {
       const el = contentRef.current;
       const anchor = anchorRef.current;
-      if (el?.contains(e.target as Node) || anchor?.contains(e.target as Node)) return;
+      if (el?.contains(e.target as Node) || anchor?.contains(e.target as Node))
+        return;
       onClose();
     };
     document.addEventListener("mousedown", handleClick);
@@ -63,7 +67,9 @@ const Popover: FC<PopoverProps> = ({ anchorRef, open, onClose, children }) => {
       ref={contentRef}
       className={styles.popover}
       style={
-        position ? { top: position.top, left: position.left } : { visibility: "hidden" }
+        position
+          ? { top: position.top, left: position.left }
+          : { visibility: "hidden" }
       }
       role="dialog"
       aria-modal="true"

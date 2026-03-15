@@ -7,7 +7,7 @@ import {
 } from "../searchToursService";
 import { stopSearchPrices } from "@/shared/api";
 import { filterToursByDestination } from "../services/filterToursByDestination";
-import type { TourCardViewModel } from "../services/toursAggregator";
+import type { TourCardViewModel } from "@/features/tours-search";
 import { isSearchCancelledError } from "../searchTours.types";
 import { QUERY_KEYS } from "../query-keys";
 
@@ -45,17 +45,15 @@ export function useTourSearch(): UseTourSearchResult {
   const abortRef = useRef<AbortController | null>(null);
   const [destinationForResultsFilter, setDestinationForResultsFilter] =
     useState<DestinationOption | null>(null);
-  const [validationMessage, setValidationMessage] = useState<string | null>(null);
+  const [validationMessage, setValidationMessage] = useState<string | null>(
+    null
+  );
 
   const mutation = useMutation({
-    mutationFn: ({
-      countryId,
-      signal,
-      tokenRef: tr,
-    }: MutationPayload) =>
+    mutationFn: ({ countryId, signal, tokenRef: tr }: MutationPayload) =>
       runToursSearchByCountryId(countryId, {
         signal,
-        onToken: tr ? (t) => (tr.current = t) : undefined,
+        onToken: tr ? t => (tr.current = t) : undefined,
       }),
     onSuccess: (data, { countryId, destination }) => {
       queryClient.setQueryData<TourCardViewModel[]>(
@@ -66,7 +64,9 @@ export function useTourSearch(): UseTourSearchResult {
     },
   });
 
-  const countryIdForQuery = getCountryIdFromDestination(destinationForResultsFilter);
+  const countryIdForQuery = getCountryIdFromDestination(
+    destinationForResultsFilter
+  );
 
   const {
     data: cachedTours = [],
@@ -113,7 +113,7 @@ export function useTourSearch(): UseTourSearchResult {
         abortRef.current.abort();
       }
       if (tokenRef.current) {
-        stopSearchPrices(tokenRef.current).catch(() => {});
+        stopSearchPrices(tokenRef.current).catch(() => undefined);
         tokenRef.current = null;
       }
       const controller = new AbortController();

@@ -9,7 +9,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className = "", error, ...props }, ref) => (
     <input
       ref={ref}
-      className={`${styles.input} ${error ? styles.error : ""} ${className}`.trim()}
+      className={`${styles.input} ${
+        error ? styles.error : ""
+      } ${className}`.trim()}
       aria-invalid={error}
       {...props}
     />

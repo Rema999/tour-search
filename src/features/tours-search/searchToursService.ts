@@ -66,9 +66,12 @@ export async function runToursSearchByCountryId(
   return aggregateToursToViewModels(result.prices, countryId);
 }
 
-function checkCancelled(signal: AbortSignal | undefined, token: string): never | void {
+function checkCancelled(
+  signal: AbortSignal | undefined,
+  token: string
+): never | void {
   if (signal?.aborted) {
-    stopSearchPrices(token).catch(() => {});
+    stopSearchPrices(token).catch(() => undefined);
     const err: SearchCancelledError = {
       code: SEARCH_CANCELLED_CODE,
       message: "Search cancelled",

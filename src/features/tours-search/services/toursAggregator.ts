@@ -62,7 +62,9 @@ function parseHotel(raw: Record<string, unknown>): HotelRecord {
   };
 }
 
-function parseHotelsMap(raw: Record<string, unknown>): Map<number, HotelRecord> {
+function parseHotelsMap(
+  raw: Record<string, unknown>
+): Map<number, HotelRecord> {
   const map = new Map<number, HotelRecord>();
   for (const value of Object.values(raw)) {
     if (value && typeof value === "object") {

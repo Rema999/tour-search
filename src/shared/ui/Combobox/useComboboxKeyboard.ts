@@ -32,15 +32,11 @@ export function useComboboxKeyboard<T>({
       switch (e.key) {
         case "ArrowDown":
           e.preventDefault();
-          setHighlightedIndex((i) =>
-            i < options.length - 1 ? i + 1 : 0
-          );
+          setHighlightedIndex(i => (i < options.length - 1 ? i + 1 : 0));
           break;
         case "ArrowUp":
           e.preventDefault();
-          setHighlightedIndex((i) =>
-            i > 0 ? i - 1 : options.length - 1
-          );
+          setHighlightedIndex(i => (i > 0 ? i - 1 : options.length - 1));
           break;
         case "Enter":
           e.preventDefault();

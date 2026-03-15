@@ -12,10 +12,10 @@ export function filterToursByDestination(
   if (!destination) return [];
   if (destination.type === "country") return tours;
   if (destination.type === "city") {
-    return tours.filter((t) => String(t.cityId) === destination.id);
+    return tours.filter(t => String(t.cityId) === destination.id);
   }
   if (destination.type === "hotel") {
-    return tours.filter((t) => String(t.hotelId) === destination.id);
+    return tours.filter(t => String(t.hotelId) === destination.id);
   }
   return tours;
 }

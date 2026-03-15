@@ -27,7 +27,7 @@ export function ComboboxList<T>({
       ref={listRef}
       className={styles.list}
       role="listbox"
-      onMouseDown={(e) => e.preventDefault()}
+      onMouseDown={e => e.preventDefault()}
     >
       {options.length === 0 ? (
         <li className={styles.itemEmpty} role="option">
@@ -38,7 +38,9 @@ export function ComboboxList<T>({
           <li
             key={getOptionKey(option)}
             id={`combobox-option-${getOptionKey(option)}`}
-            className={`${styles.item} ${index === highlightedIndex ? styles.highlighted : ""}`}
+            className={`${styles.item} ${
+              index === highlightedIndex ? styles.highlighted : ""
+            }`}
             role="option"
             aria-selected={index === highlightedIndex}
             onClick={() => onSelect(option)}

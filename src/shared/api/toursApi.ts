@@ -1,4 +1,3 @@
-// @ts-expect-error api.js is a JS module
 import * as api from "../../../api.js";
 
 async function parseResponse<T>(response: Response): Promise<T> {
@@ -11,12 +10,16 @@ async function parseResponse<T>(response: Response): Promise<T> {
 
 export async function getCountries() {
   const response = await api.getCountries();
-  return parseResponse<Record<string, { id: string; name: string; flag: string }>>(response);
+  return parseResponse<
+    Record<string, { id: string; name: string; flag: string }>
+  >(response);
 }
 
 export async function searchGeo(query: string) {
   const response = await api.searchGeo(query);
-  return parseResponse<Record<string, { id: string; name: string; type: string }>>(response);
+  return parseResponse<
+    Record<string, { id: string; name: string; type: string }>
+  >(response);
 }
 
 export async function startSearchPrices(countryID: string) {

@@ -16,18 +16,14 @@ export const SearchSection: FC = () => {
     useState<DestinationOption | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_PAGE_SIZE);
 
-  const {
-    search,
-    tours,
-    loading,
-    error,
-    hasSearched,
-    loadingForCountryId,
-  } = useTourSearch();
+  const { search, tours, loading, error, hasSearched, loadingForCountryId } =
+    useTourSearch();
 
   const currentCountryId = getCountryIdFromDestination(selectedDestination);
   const isSubmitting =
-    loading && currentCountryId !== null && currentCountryId === loadingForCountryId;
+    loading &&
+    currentCountryId !== null &&
+    currentCountryId === loadingForCountryId;
 
   useEffect(() => {
     setVisibleCount(INITIAL_PAGE_SIZE);
@@ -45,7 +41,7 @@ export const SearchSection: FC = () => {
           selectedDestination={selectedDestination}
           inputValue={inputValue}
           onInputValueChange={setInputValue}
-          onSelect={(d) => {
+          onSelect={d => {
             setSelectedDestination(d);
             setInputValue(d?.label ?? "");
           }}
@@ -81,7 +77,7 @@ export const SearchSection: FC = () => {
               <Button
                 type="button"
                 className={styles.showMoreBtn}
-                onClick={() => setVisibleCount((n) => n + PAGE_SIZE)}
+                onClick={() => setVisibleCount(n => n + PAGE_SIZE)}
               >
                 Показати ще
               </Button>

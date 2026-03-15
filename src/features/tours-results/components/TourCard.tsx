@@ -19,29 +19,18 @@ function formatDisplayDate(iso: string): string {
 export const TourCard: FC<TourCardProps> = ({ card }) => (
   <article className={styles.card}>
     {card.imageUrl && (
-      <img
-        src={card.imageUrl}
-        alt=""
-        className={styles.img}
-        loading="lazy"
-      />
+      <img src={card.imageUrl} alt="" className={styles.img} loading="lazy" />
     )}
     <div className={styles.body}>
       <h3 className={styles.title}>{card.hotelName}</h3>
-      {card.location && (
-        <p className={styles.location}>{card.location}</p>
-      )}
+      {card.location && <p className={styles.location}>{card.location}</p>}
       {card.startDate && (
         <p className={styles.date}>
           Старт: {formatDisplayDate(card.startDate)}
         </p>
       )}
-      <p className={styles.price}>
-        {card.price.toLocaleString()} грн
-      </p>
-      {card.nights > 0 && (
-        <p className={styles.nights}>{card.nights} ночей</p>
-      )}
+      <p className={styles.price}>{card.price.toLocaleString()} грн</p>
+      {card.nights > 0 && <p className={styles.nights}>{card.nights} ночей</p>}
       <a href="#" className={styles.link}>
         Відкрити ціну
       </a>

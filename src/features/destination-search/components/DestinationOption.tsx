@@ -1,18 +1,18 @@
 import { FC } from "react";
-import type { DestinationOption } from "../types";
+import type { DestinationOption as DestinationOptionType } from "../types";
 import styles from "./DestinationOption.module.css";
 
 export type DestinationOptionProps = {
-  option: DestinationOption;
+  option: DestinationOptionType;
 };
 
-const typeIcon: Record<DestinationOption["type"], string> = {
+const typeIcon: Record<DestinationOptionType["type"], string> = {
   country: "🌐",
   city: "📍",
   hotel: "🏨",
 };
 
-const typeLabel: Record<DestinationOption["type"], string> = {
+const typeLabel: Record<DestinationOptionType["type"], string> = {
   country: "Country",
   city: "City",
   hotel: "Hotel",

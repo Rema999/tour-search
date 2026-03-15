@@ -23,9 +23,10 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   ) => {
     const fallbackId = useId();
     const generatedId = id ?? fallbackId;
-    const describedBy = [error && `${generatedId}-error`, hint && `${generatedId}-hint`]
-      .filter(Boolean)
-      .join(" ") || undefined;
+    const describedBy =
+      [error && `${generatedId}-error`, hint && `${generatedId}-hint`]
+        .filter(Boolean)
+        .join(" ") || undefined;
 
     return (
       <div className={styles.field}>
@@ -43,7 +44,11 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           {...inputProps}
         />
         {error && (
-          <span id={`${generatedId}-error`} className={styles.error} role="alert">
+          <span
+            id={`${generatedId}-error`}
+            className={styles.error}
+            role="alert"
+          >
             {error}
           </span>
         )}

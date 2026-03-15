@@ -9,7 +9,7 @@ export type TourListProps = {
 
 export const TourList: FC<TourListProps> = ({ cards }) => (
   <TourGrid>
-    {cards.map((card) => (
+    {cards.map(card => (
       <TourCard key={card.id} card={card} />
     ))}
   </TourGrid>
