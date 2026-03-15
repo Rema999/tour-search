@@ -19,7 +19,12 @@ function formatDisplayDate(iso: string): string {
 export const TourCard: FC<TourCardProps> = ({ card }) => (
   <article className={styles.card}>
     {card.imageUrl && (
-      <img src={card.imageUrl} alt="" className={styles.img} loading="lazy" />
+      <img
+        src={card.imageUrl}
+        alt={card.hotelName}
+        className={styles.img}
+        loading="lazy"
+      />
     )}
     <div className={styles.body}>
       <h3 className={styles.title}>{card.hotelName}</h3>
