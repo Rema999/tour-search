@@ -47,3 +47,11 @@ pnpm lint-fix # lint with auto-fix
 ## API
 
 All data calls go through `src/shared/api/toursApi.ts`, which wraps the project’s `api.js`. Used methods include `getCountries`, `searchGeo`, `startSearchPrices`, `getSearchPrices`, `stopSearchPrices`, `getHotels`, etc. See the API contract documentation for request/response shapes.
+
+## Possible Improvements
+
+- **E2E tests** — Add Playwright or Cypress to verify the full search flow from UI to API.
+- **Result virtualization** — Implement a virtualized list (e.g. react-window) for large result sets; currently all visible cards are rendered.
+- **Request caching** — Search results are already cached per `countryId` via React Query; consider extending (e.g. persistence, tuning staleTime) or applying similar caching to other endpoints if needed.
+- **Accessibility** — Basic ARIA and keyboard support exist (combobox, listbox, label association); further improve with additional attributes and full keyboard coverage where needed.
+- **Error Boundary** — Add a React Error Boundary to isolate runtime errors and show a fallback UI instead of a blank screen.
